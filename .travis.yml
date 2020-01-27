@@ -20,20 +20,20 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases
-        api_key: 0354a7aa3a7635c9cd622acf39b7adfeed1dbe7a
+        api_key: $GITHUB_OAUTH_TOKEN
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
     - stage: deploy to cf
       language: bash
       script:
         - echo "Downloading $RELEASE_TAG"
-        - wget -P build/libs https://github.com/koshiPal/pal-tracker/releases/download/$RELEASE_TAG/pal-tracker.jar
+        - wget -P build/libs https://github.com/$GITHUB_USERNAME/pal-tracker/releases/download/$RELEASE_TAG/pal-tracker.jar
       before_deploy:
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       deploy:
         provider: cloudfoundry
-        api: api.sys.evans.pal.pivotal.io
-        username: satoshi.koshihara.yg@hitachi-solutions.com
-        password: 27b8j8gy
-        organization: satoshi.koshihara.yg.hitachi-solutions.com
-        space: pal-tracker-pal-tracker-kikukoshi.api.sys.evans.pal.pivotal.io
+        api: $CF_API_URL
+        username: $CF_USERNAME
+        password: $CF_PASSWORD
+        organization: $CF_ORG
+        space: $CF_SPACE
