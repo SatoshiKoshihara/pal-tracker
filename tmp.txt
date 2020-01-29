@@ -1,0 +1,11 @@
+Getting key mykey for service instance tracker-database as satoshi.koshihara.yg@hitachi-solutions.com...
+
+{
+ "hostname": "q-n3s3y1.q-g58558.bosh",
+ "jdbcUrl": "jdbc:mysql://q-n3s3y1.q-g58558.bosh:3306/service_instance_db?user=d0dc79e1b5bf408d9c61447ddaa1c2a6\u0026password=8kw2so2l8ry4qd8x\u0026useSSL=false",
+ "name": "service_instance_db",
+ "password": "8kw2so2l8ry4qd8x",
+ "port": 3306,
+ "uri": "mysql://d0dc79e1b5bf408d9c61447ddaa1c2a6:8kw2so2l8ry4qd8x@q-n3s3y1.q-g58558.bosh:3306/service_instance_db?reconnect=true",
+ "username": "d0dc79e1b5bf408d9c61447ddaa1c2a6"
+}
